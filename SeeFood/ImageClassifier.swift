@@ -68,6 +68,7 @@ class ImageClassifier: ObservableObject {
     }
     
     func calorieNinja(){
+        //callback:@escaping () -> Void
         guard let endcodeUrlString = imageClass?.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)else {
             return
         }
@@ -85,6 +86,26 @@ class ImageClassifier: ObservableObject {
         let task = URLSession.shared.dataTask(with: request) {(data, response, error) in
             guard let data = data else {return }
             print(String(data: data, encoding: .utf8)!)
+            
+//            if let error = error{
+//                print(error)
+//                return
+//            }
+//
+//            guard let httpResponse = response as? HTTPURLResponse,
+//                  (200...299).contains(httpResponse.statusCode) else {
+//                      print(response)
+//                      return
+//                  }
+//
+//            print("ok")
+//
+//            if let data = data, let food = try?
+//                JSONDecoder().decode(Food.self, from: data){
+//                self.food = food
+//                print(self.food)
+//            }
+//            callback()
         }
         task.resume()
     }
