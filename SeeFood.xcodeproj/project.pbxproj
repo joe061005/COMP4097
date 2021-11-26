@@ -15,7 +15,6 @@
 		5E73DF57266571D7002891DE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E73DF56266571D7002891DE /* Assets.xcassets */; };
 		5E73DF5A266571D7002891DE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E73DF59266571D7002891DE /* Preview Assets.xcassets */; };
 		5E73DF6226657B97002891DE /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E73DF6126657B97002891DE /* ImagePicker.swift */; };
-		D82733B0274F58F400630D0E /* SeeFood.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = D82733AF274F58F400630D0E /* SeeFood.mlmodel */; };
 		D82733B2274F6DDD00630D0E /* food.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = D82733B1274F6DDD00630D0E /* food.mlmodel */; };
 /* End PBXBuildFile section */
 
@@ -30,7 +29,6 @@
 		5E73DF59266571D7002891DE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		5E73DF5B266571D7002891DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5E73DF6126657B97002891DE /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
-		D82733AF274F58F400630D0E /* SeeFood.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = SeeFood.mlmodel; path = ../../../Downloads/SeeFood.mlmodel; sourceTree = "<group>"; };
 		D82733B1274F6DDD00630D0E /* food.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = food.mlmodel; path = ../../../Downloads/food.mlmodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -73,7 +71,6 @@
 				5E5F7104266598B200C7B0F7 /* Classifier.swift */,
 				5E5F7106266599F200C7B0F7 /* MobileNetV2.mlmodel */,
 				5E5F71082666023400C7B0F7 /* ImageClassifier.swift */,
-				D82733AF274F58F400630D0E /* SeeFood.mlmodel */,
 				D82733B1274F6DDD00630D0E /* food.mlmodel */,
 			);
 			path = SeeFood;
@@ -157,7 +154,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				5E5F7105266598B200C7B0F7 /* Classifier.swift in Sources */,
-				D82733B0274F58F400630D0E /* SeeFood.mlmodel in Sources */,
 				5E73DF6226657B97002891DE /* ImagePicker.swift in Sources */,
 				5E73DF55266571D7002891DE /* ContentView.swift in Sources */,
 				D82733B2274F6DDD00630D0E /* food.mlmodel in Sources */,
@@ -294,7 +290,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"SeeFood/Preview Content\"";
-				DEVELOPMENT_TEAM = 4CU4FM33FS;
+				DEVELOPMENT_TEAM = 564XTF6KZX;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = SeeFood/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -302,7 +298,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = icloud.leonwei.SeeFood;
+				PRODUCT_BUNDLE_IDENTIFIER = hkbu.comp.SeeFood;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
@@ -318,7 +314,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"SeeFood/Preview Content\"";
-				DEVELOPMENT_TEAM = 4CU4FM33FS;
+				DEVELOPMENT_TEAM = 564XTF6KZX;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = SeeFood/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -326,7 +322,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = icloud.leonwei.SeeFood;
+				PRODUCT_BUNDLE_IDENTIFIER = hkbu.comp.SeeFood;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
