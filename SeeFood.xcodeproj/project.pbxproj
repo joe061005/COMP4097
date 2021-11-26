@@ -298,7 +298,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"SeeFood/Preview Content\"";
-				DEVELOPMENT_TEAM = 4CU4FM33FS;
+				DEVELOPMENT_TEAM = 564XTF6KZX;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = SeeFood/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -306,7 +306,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = icloud.leonwei.SeeFood;
+				PRODUCT_BUNDLE_IDENTIFIER = hkbu.comp.SeeFood;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
@@ -322,7 +322,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"SeeFood/Preview Content\"";
-				DEVELOPMENT_TEAM = 4CU4FM33FS;
+				DEVELOPMENT_TEAM = 564XTF6KZX;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = SeeFood/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -330,7 +330,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = icloud.leonwei.SeeFood;
+				PRODUCT_BUNDLE_IDENTIFIER = hkbu.comp.SeeFood;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
