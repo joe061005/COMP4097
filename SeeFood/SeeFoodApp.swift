@@ -11,7 +11,7 @@ import SwiftUI
 struct SeeFoodApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView(classifier: ImageClassifier())
+            ContentView()
         }
     }
 }
