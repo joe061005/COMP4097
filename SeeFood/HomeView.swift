@@ -128,7 +128,8 @@ extension HomeView{
     func getStringDate()->String{
         let time = Date()
         let timeFormatter = DateFormatter()
-        timeFormatter.dateFormat = "YY, MMM d, HH:mm:ss" //"yyyy-MM-dd'T'HH:mm:ssZ"
+        timeFormatter.dateStyle = .long
+        timeFormatter.timeStyle = .short
         let stringDate = timeFormatter.string(from: time)
         return stringDate
     }
