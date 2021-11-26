@@ -66,6 +66,28 @@ class ImageClassifier: ObservableObject {
         }
         task.resume()
     }
+    
+    func calorieNinja(callback:@escaping () -> Void){
+        guard let endcodeUrlString = imageClass?.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)else {
+            return
+        }
+        
+        guard let url = URL(string: "https://api.calorieninjas.com/v1/nutrition?query=\(endcodeUrlString)")
+        else{
+            print("Invalid url string")
+            return
+        }
+        
+        //set API Key here
+        var request = URLRequest(url: url)
+        request.setValue("x7CglOn0K3KJaLmGdv/q1g==ikn1hLHMSGCng7sy", forHTTPHeaderField: "X-Api-Key")
+        
+        let task = URLSession.shared.dataTask(with: request) {(data, response, error) in
+            guard let data = data else {return }
+            print(String(data: data, encoding: .utf8)!)
+        }
+        task.resume()
+    }
 }
 
 struct Food: Decodable, Identifiable{

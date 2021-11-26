@@ -99,9 +99,10 @@ struct HomeView: View {
                 .onDisappear{
                     if uiImage != nil {
                         classifier.detect(uiImage: uiImage!)
-                        classifier.getNutritionInfo(){
-                            food = classifier.food!
-                        }
+                        classifier.calorieNinja()
+//                        classifier.getNutritionInfo(){
+//                            food = classifier.food!
+//                        }
                     }
                 }
             
