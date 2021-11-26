@@ -100,9 +100,9 @@ struct HomeView: View {
                     if uiImage != nil {
                         classifier.detect(uiImage: uiImage!)
                         classifier.calorieNinja()
-//                        classifier.getNutritionInfo(){
-//                            food = classifier.food!
-//                        }
+                        //                        classifier.getNutritionInfo(){
+                        //                            food = classifier.food!
+                        //                        }
                     }
                 }
             
@@ -114,4 +114,23 @@ struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
         HomeView(classifier: ImageClassifier())
     }
+}
+
+extension HomeView{
+    func getDate()->String{
+        let time = Date()
+        let timeFormatter = DateFormatter()
+        timeFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+        let stringDate = timeFormatter.string(from: time)
+        return stringDate
+    }
+    
+    func getStringDate()->String{
+        let time = Date()
+        let timeFormatter = DateFormatter()
+        timeFormatter.dateFormat = "YY, MMM d, HH:mm:ss" //"yyyy-MM-dd'T'HH:mm:ssZ"
+        let stringDate = timeFormatter.string(from: time)
+        return stringDate
+    }
+    
 }
