@@ -67,7 +67,7 @@ class ImageClassifier: ObservableObject {
         task.resume()
     }
     
-    func calorieNinja(callback:@escaping () -> Void){
+    func calorieNinja(){
         guard let endcodeUrlString = imageClass?.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)else {
             return
         }
@@ -107,5 +107,24 @@ struct info: Decodable, Identifiable{
     let nutrientNumber: String
 }
 
-
+//struct Food: Decodable, Identifiable{
+//    let id = UUID()
+//    let items: [nutrition]
+//}
+//
+//struct nutrition: Decodable, Identifiable{
+//    let id = UUID()
+//    let sugar_g: Double
+//    let fiber_g: Double
+//    let serving_size_g: Double
+//    let sodium_mg: Int
+//    let name: String
+//    let potassium_mg: Int
+//    let fat_saturated_g: Double
+//    let fat_total_g: Double
+//    let calories: Double
+//    let cholestrol_mg: Double
+//    let proteim_g: Double
+//    let carbohydrates_total_g: Double
+//}
 

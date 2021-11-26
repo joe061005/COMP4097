@@ -100,9 +100,9 @@ struct HomeView: View {
                     if uiImage != nil {
                         classifier.detect(uiImage: uiImage!)
                         classifier.calorieNinja()
-//                        classifier.getNutritionInfo(){
-//                            food = classifier.food!
-//                        }
+                        classifier.getNutritionInfo(){
+                            food = classifier.food!
+                        }
                     }
                 }
             
