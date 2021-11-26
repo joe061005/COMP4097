@@ -54,7 +54,21 @@ struct HomeView: View {
                 if(!food.items.isEmpty){
                     List(food.items){
                         nut in
-                        Text("\(nut.sugar_g)")
+                        VStack{
+                        Text("Sugar: \(nut.sugar_g)")
+                        Text("Fiber: \(nut.fiber_g)")
+                        Text("Serving size: \(nut.serving_size_g)")
+                        Text("Sodium: \(nut.sodium_mg)")
+                        Text("Potassium: \(nut.potassium_mg)")
+                        Text("Saturated Fat: \(nut.fat_saturated_g)")
+                        Text("Total Fat: \(nut.fat_total_g)")
+                        Text("Calories: \(nut.calories)")
+                        Text("Cholesterol: \(nut.cholesterol_mg)")
+                        Text("Protein: \(nut.protein_g)")
+                        }
+                        
+                        
+                      
                     }
                 }
             }
@@ -101,6 +115,7 @@ struct HomeView: View {
                         classifier.detect(uiImage: uiImage!)
                         classifier.calorieNinja(){
                             food = classifier.food!
+                            print("Food ", food)
                         }
                         //                        classifier.getNutritionInfo(){
                         //                            food = classifier.food!

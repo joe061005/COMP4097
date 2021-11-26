@@ -147,7 +147,7 @@ struct nutrition: Decodable, Identifiable{
     let fat_saturated_g: Double
     let fat_total_g: Double
     let calories: Double
-    let cholestrol_mg: Int
+    let cholesterol_mg: Int
     let protein_g: Double
     let carbohydrates_total_g: Double
 }
