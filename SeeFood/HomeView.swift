@@ -15,7 +15,7 @@ struct HomeView: View {
     
     @ObservedObject var classifier: ImageClassifier
     
-    @State var food: Food = Food(foods: [])
+    @State var food: Food = Food(items: [])
     
     var body: some View {
         VStack{
@@ -51,10 +51,10 @@ struct HomeView: View {
                 )
             
             VStack{
-                if(!food.foods.isEmpty){
-                    List(food.foods[0].foodNutrients){
+                if(!food.items.isEmpty){
+                    List(food.items){
                         nut in
-                        Text("\(nut.nutrientName): \(nut.nutrientNumber)\(nut.unitName)")
+                        Text("\(nut.sugar_g)")
                     }
                 }
             }
@@ -99,7 +99,9 @@ struct HomeView: View {
                 .onDisappear{
                     if uiImage != nil {
                         classifier.detect(uiImage: uiImage!)
-                        classifier.calorieNinja()
+                        classifier.calorieNinja(){
+                            food = classifier.food!
+                        }
                         //                        classifier.getNutritionInfo(){
                         //                            food = classifier.food!
                         //                        }
