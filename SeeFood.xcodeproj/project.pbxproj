@@ -15,9 +15,12 @@
 		5E73DF57266571D7002891DE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E73DF56266571D7002891DE /* Assets.xcassets */; };
 		5E73DF5A266571D7002891DE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E73DF59266571D7002891DE /* Preview Assets.xcassets */; };
 		5E73DF6226657B97002891DE /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E73DF6126657B97002891DE /* ImagePicker.swift */; };
+		662C8CDF2753445C000DBC47 /* food.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 662C8CDE2753445C000DBC47 /* food.mlmodel */; };
+		662C8CE2275344F6000DBC47 /* FoodNutrition.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 662C8CE0275344F6000DBC47 /* FoodNutrition.xcdatamodeld */; };
+		662C8CE527534681000DBC47 /* FoodData+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662C8CE327534681000DBC47 /* FoodData+CoreDataClass.swift */; };
+		662C8CE8275346AE000DBC47 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662C8CE7275346AE000DBC47 /* Persistence.swift */; };
 		66F652312750B7E400B7E996 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F652302750B7E400B7E996 /* HomeView.swift */; };
 		66F652332750B93300B7E996 /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F652322750B93300B7E996 /* HistoryView.swift */; };
-		D82733B2274F6DDD00630D0E /* food.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = D82733B1274F6DDD00630D0E /* food.mlmodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,9 +34,12 @@
 		5E73DF59266571D7002891DE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		5E73DF5B266571D7002891DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5E73DF6126657B97002891DE /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		662C8CDE2753445C000DBC47 /* food.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = food.mlmodel; sourceTree = "<group>"; };
+		662C8CE1275344F6000DBC47 /* FoodNutrition.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FoodNutrition.xcdatamodel; sourceTree = "<group>"; };
+		662C8CE327534681000DBC47 /* FoodData+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FoodData+CoreDataClass.swift"; sourceTree = "<group>"; };
+		662C8CE7275346AE000DBC47 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		66F652302750B7E400B7E996 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		66F652322750B93300B7E996 /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
-		D82733B1274F6DDD00630D0E /* food.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = food.mlmodel; path = ../../../Downloads/food.mlmodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +56,7 @@
 		5E73DF46266571D7002891DE = {
 			isa = PBXGroup;
 			children = (
+				662C8CE327534681000DBC47 /* FoodData+CoreDataClass.swift */,
 				5E73DF51266571D7002891DE /* SeeFood */,
 				5E73DF50266571D7002891DE /* Products */,
 			);
@@ -66,6 +73,7 @@
 		5E73DF51266571D7002891DE /* SeeFood */ = {
 			isa = PBXGroup;
 			children = (
+				662C8CDE2753445C000DBC47 /* food.mlmodel */,
 				5E73DF6126657B97002891DE /* ImagePicker.swift */,
 				5E73DF52266571D7002891DE /* SeeFoodApp.swift */,
 				5E73DF54266571D7002891DE /* ContentView.swift */,
@@ -75,9 +83,10 @@
 				5E5F7104266598B200C7B0F7 /* Classifier.swift */,
 				5E5F7106266599F200C7B0F7 /* MobileNetV2.mlmodel */,
 				5E5F71082666023400C7B0F7 /* ImageClassifier.swift */,
-				D82733B1274F6DDD00630D0E /* food.mlmodel */,
 				66F652302750B7E400B7E996 /* HomeView.swift */,
 				66F652322750B93300B7E996 /* HistoryView.swift */,
+				662C8CE0275344F6000DBC47 /* FoodNutrition.xcdatamodeld */,
+				662C8CE7275346AE000DBC47 /* Persistence.swift */,
 			);
 			path = SeeFood;
 			sourceTree = "<group>";
@@ -161,12 +170,15 @@
 			files = (
 				5E5F7105266598B200C7B0F7 /* Classifier.swift in Sources */,
 				5E73DF6226657B97002891DE /* ImagePicker.swift in Sources */,
+				662C8CE2275344F6000DBC47 /* FoodNutrition.xcdatamodeld in Sources */,
+				662C8CDF2753445C000DBC47 /* food.mlmodel in Sources */,
 				5E73DF55266571D7002891DE /* ContentView.swift in Sources */,
-				D82733B2274F6DDD00630D0E /* food.mlmodel in Sources */,
 				5E5F71092666023400C7B0F7 /* ImageClassifier.swift in Sources */,
 				66F652312750B7E400B7E996 /* HomeView.swift in Sources */,
 				5E5F7107266599F200C7B0F7 /* MobileNetV2.mlmodel in Sources */,
 				66F652332750B93300B7E996 /* HistoryView.swift in Sources */,
+				662C8CE8275346AE000DBC47 /* Persistence.swift in Sources */,
+				662C8CE527534681000DBC47 /* FoodData+CoreDataClass.swift in Sources */,
 				5E73DF53266571D7002891DE /* SeeFoodApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -298,7 +310,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"SeeFood/Preview Content\"";
-				DEVELOPMENT_TEAM = 564XTF6KZX;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = SeeFood/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -322,7 +334,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"SeeFood/Preview Content\"";
-				DEVELOPMENT_TEAM = 564XTF6KZX;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = SeeFood/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -360,6 +372,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		662C8CE0275344F6000DBC47 /* FoodNutrition.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				662C8CE1275344F6000DBC47 /* FoodNutrition.xcdatamodel */,
+			);
+			currentVersion = 662C8CE1275344F6000DBC47 /* FoodNutrition.xcdatamodel */;
+			path = FoodNutrition.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 5E73DF47266571D7002891DE /* Project object */;
 }
