@@ -190,4 +190,9 @@ extension HomeView{
         
     }
     
+    func clearData() {
+        uiImage = nil
+        food = Food(items:[])
+    }
+    
 }
