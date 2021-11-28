@@ -82,10 +82,10 @@ struct HomeView: View {
                     }
                     
                     Button(action: {
-                        
+                        startSave(food: food)
                     }) {
                         Text("Save")
-                    }
+                    }.disabled(food.items.isEmpty)
                 }
             }
             
