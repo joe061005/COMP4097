@@ -55,20 +55,33 @@ struct HomeView: View {
                     List(food.items){
                         nut in
                         VStack(alignment: .leading){
-                            Text("Sugar: \(nut.sugar_g, specifier: "%.1f") g")
-                        Text("Fiber: \(nut.fiber_g, specifier: "%.1f") g")
-                        Text("Serving size: \(nut.serving_size_g, specifier: "%.1f") g")
-                        Text("Sodium: \(nut.sodium_mg, specifier: "%.1f") mg")
-                        Text("Potassium: \(nut.potassium_mg, specifier: "%.1f") mg")
-                        Text("Saturated Fat: \(nut.fat_saturated_g, specifier: "%.1f") g")
-                        Text("Total Fat: \(nut.fat_total_g, specifier: "%.1f") g")
-                        Text("Calories: \(nut.calories, specifier: "%.1f") cal")
-                        Text("Cholesterol: \(nut.cholesterol_mg, specifier: "%.1f") mg")
-                        Text("Protein: \(nut.protein_g, specifier: "%.1f") g")
+                            Group{
+                                Text("Detected: \(nut.name)")
+                                Text("Sugar: \(nut.sugar_g, specifier: "%.1f") g")
+                                Text("Fiber: \(nut.fiber_g, specifier: "%.1f") g")
+                                Text("Serving size: \(nut.serving_size_g, specifier: "%.1f") g")
+                                Text("Sodium: \(nut.sodium_mg, specifier: "%.1f") mg")
+                            }
+                            
+                            Group{
+                                Text("Potassium: \(nut.potassium_mg, specifier: "%.1f") mg")
+                                Text("Saturated Fat: \(nut.fat_saturated_g, specifier: "%.1f") g")
+                                Text("Total Fat: \(nut.fat_total_g, specifier: "%.1f") g")
+                                Text("Calories: \(nut.calories, specifier: "%.1f") cal")
+                                Text("Cholesterol: \(nut.cholesterol_mg, specifier: "%.1f") mg")
+                                Text("Protein: \(nut.protein_g, specifier: "%.1f") g")
+                            }
+                            
                         }
                         
                         
-                      
+                        
+                    }
+                    
+                    Button(action: {
+                        
+                    }) {
+                        Text("Save")
                     }
                 }
             }
