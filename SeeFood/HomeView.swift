@@ -12,6 +12,8 @@ struct HomeView: View {
     @State var uiImage: UIImage?
     @State var sourceType: UIImagePickerController.SourceType = .photoLibrary
     
+    //used to create core data objects
+    @Environment(\.managedObjectContext) var managedObjectContext
     
     @ObservedObject var classifier: ImageClassifier
     
@@ -59,6 +61,7 @@ struct HomeView: View {
                                 Text("Detected: \(nut.name)")
                                 Text("Sugar: \(nut.sugar_g, specifier: "%.1f") g")
                                 Text("Fiber: \(nut.fiber_g, specifier: "%.1f") g")
+                                Text("Carbohydrates: \(nut.carbohydrates_total_g, specifier: "%.1f") g")
                                 Text("Serving size: \(nut.serving_size_g, specifier: "%.1f") g")
                                 Text("Sodium: \(nut.sodium_mg, specifier: "%.1f") mg")
                             }
@@ -162,6 +165,29 @@ extension HomeView{
         timeFormatter.timeStyle = .short
         let stringDate = timeFormatter.string(from: time)
         return stringDate
+    }
+    
+    func startSave(food: Food) {
+        let data = uiImage!.jpegData(compressionQuality: 1.0)
+        
+        food.items.forEach { nutrition in
+            let foodObj = FoodData(context: managedObjectContext)
+            foodObj.calories = nutrition.calories
+            foodObj.carbohydrates_total_g = nutrition.carbohydrates_total_g
+            foodObj.cholestrol_mg = Int64(nutrition.cholesterol_mg)
+            foodObj.fat_saturated_g = nutrition.fat_saturated_g
+            foodObj.fat_total_g = nutrition.fat_total_g
+            foodObj.fiber_g = nutrition.fiber_g
+            foodObj.img_data = data
+            foodObj.name = nutrition.name
+            foodObj.potassium_mg = Int64(nutrition.potassium_mg)
+            foodObj.protein_g = nutrition.protein_g
+            foodObj.serving_size_g = nutrition.serving_size_g
+            foodObj.sodium_mg = Int64(nutrition.sodium_mg)
+            foodObj.sugar_g = nutrition.sugar_g
+            foodObj.timestamp = getDate()
+        }
+        
     }
     
 }
