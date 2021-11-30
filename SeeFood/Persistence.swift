@@ -15,22 +15,27 @@ struct PersistenceController {
         let result = PersistenceController(inMemory: true)
         let viewContext = result.container.viewContext
         //provide previews example object here
-        for _ in 0..<10 {
+        for _ in 0..<5 {
 //            let newItem = Item(context: viewContext)
 //            newItem.timestamp = Date()
             let foodItem = FoodData(context: viewContext)
-            foodItem.calories = Double.random(in: 1...10)
-            foodItem.carbohydrates_total_g = Double.random(in: 1...10)
-            foodItem.cholestrol_mg = Int64.random(in: 1...10)
-            foodItem.fat_saturated_g = Double.random(in: 1...10)
-            foodItem.fat_total_g = Double.random(in: 1...10)
-            foodItem.fiber_g = Double.random(in: 1...10)
-            foodItem.name = "random placeholder"
-            foodItem.potassium_mg = Int64.random(in: 1...10)
-            foodItem.protein_g = Double.random(in: 1...10)
-            foodItem.serving_size_g = Double.random(in: 1...10)
-            foodItem.sodium_mg = Int64.random(in: 1...10)
-            foodItem.sugar_g = Double.random(in: 1...10)
+            let randomIntArr = (0..<3).map{_ in Int64.random(in: 1...10)}
+            let randomDoubleArr = (0..<3).map{_ in Double.random(in: 1...10)}
+            
+            foodItem.calories = randomDoubleArr
+            foodItem.carbohydrates_total_g = randomDoubleArr
+            foodItem.cholestrol_mg = randomIntArr
+            foodItem.fat_saturated_g = randomDoubleArr
+            foodItem.fat_total_g = randomDoubleArr
+            foodItem.fiber_g = randomDoubleArr
+            
+            foodItem.potassium_mg = randomIntArr
+            foodItem.protein_g = randomDoubleArr
+            foodItem.serving_size_g = randomDoubleArr
+            foodItem.sodium_mg = randomIntArr
+            foodItem.sugar_g = randomDoubleArr
+            
+            foodItem.name = ["random placeholder", "random placeholder", "random placeholder"]
             foodItem.timestamp = "placeholder timestamp"
         }
         do {

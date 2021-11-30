@@ -168,26 +168,33 @@ extension HomeView{
     }
     
     func startSave(food: Food) {
+        let foodObj = FoodData(context: managedObjectContext)
+        
         let data = uiImage!.jpegData(compressionQuality: 1.0)
         
         food.items.forEach { nutrition in
-            let foodObj = FoodData(context: managedObjectContext)
-            foodObj.calories = nutrition.calories
-            foodObj.carbohydrates_total_g = nutrition.carbohydrates_total_g
-            foodObj.cholestrol_mg = Int64(nutrition.cholesterol_mg)
-            foodObj.fat_saturated_g = nutrition.fat_saturated_g
-            foodObj.fat_total_g = nutrition.fat_total_g
-            foodObj.fiber_g = nutrition.fiber_g
-            foodObj.img_data = data
-            foodObj.name = nutrition.name
-            foodObj.potassium_mg = Int64(nutrition.potassium_mg)
-            foodObj.protein_g = nutrition.protein_g
-            foodObj.serving_size_g = nutrition.serving_size_g
-            foodObj.sodium_mg = Int64(nutrition.sodium_mg)
-            foodObj.sugar_g = nutrition.sugar_g
-            foodObj.timestamp = getDate()
+            foodObj.calories?.append(nutrition.calories)
+            foodObj.carbohydrates_total_g?.append(nutrition.carbohydrates_total_g)
+            foodObj.cholestrol_mg?.append(Int64(nutrition.cholesterol_mg))
+            foodObj.fat_saturated_g?.append(nutrition.fat_saturated_g)
+            foodObj.fat_total_g?.append(nutrition.fat_total_g)
+            foodObj.fiber_g?.append(nutrition.fiber_g)
+            
+            foodObj.name?.append(nutrition.name)
+            
+            foodObj.potassium_mg?.append(Int64(nutrition.potassium_mg))
+            foodObj.protein_g?.append(nutrition.protein_g)
+            foodObj.serving_size_g?.append(nutrition.serving_size_g)
+            foodObj.sodium_mg?.append(Int64(nutrition.sodium_mg))
+            foodObj.sugar_g?.append(nutrition.sugar_g)
         }
+        foodObj.timestamp = getDate()
         
+        do {
+            try managedObjectContext.save()
+        } catch {
+            // handle the Core Data error
+        }
     }
     
     func clearData() {
