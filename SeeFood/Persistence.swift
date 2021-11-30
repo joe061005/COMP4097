@@ -15,6 +15,11 @@ struct PersistenceController {
         let result = PersistenceController(inMemory: true)
         let viewContext = result.container.viewContext
         //provide previews example object here
+        let time = Date()
+        let timeFormatter = DateFormatter()
+        timeFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+        let stringDate = timeFormatter.string(from: time)
+        
         for _ in 0..<5 {
 //            let newItem = Item(context: viewContext)
 //            newItem.timestamp = Date()
@@ -36,7 +41,7 @@ struct PersistenceController {
             foodItem.sugar_g = randomDoubleArr
             
             foodItem.name = ["random placeholder1", "random placeholder2", "random placeholder3"]
-            foodItem.timestamp = "placeholder timestamp"
+            foodItem.timestamp = stringDate
         }
         do {
             try viewContext.save()

@@ -172,6 +172,21 @@ extension HomeView{
         
         let data = uiImage!.jpegData(compressionQuality: 1.0)
         
+        //instantiate object arrays
+        foodObj.calories = [Double]()
+        foodObj.carbohydrates_total_g = [Double]()
+        foodObj.cholestrol_mg = [Int64]()
+        foodObj.fat_saturated_g = [Double]()
+        foodObj.fat_total_g = [Double]()
+        foodObj.fiber_g = [Double]()
+        foodObj.name = [String]()
+        foodObj.potassium_mg = [Int64]()
+        foodObj.protein_g = [Double]()
+        foodObj.serving_size_g = [Double]()
+        foodObj.sodium_mg = [Int64]()
+        foodObj.sugar_g = [Double]()
+        
+        //append arrays
         food.items.forEach { nutrition in
             foodObj.calories?.append(nutrition.calories)
             foodObj.carbohydrates_total_g?.append(nutrition.carbohydrates_total_g)
@@ -189,6 +204,7 @@ extension HomeView{
             foodObj.sugar_g?.append(nutrition.sugar_g)
         }
         foodObj.timestamp = getDate()
+        foodObj.img_data = data
         
         do {
             try managedObjectContext.save()

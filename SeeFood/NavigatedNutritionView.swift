@@ -11,7 +11,11 @@ struct NavigatedNutritionView: View {
     var nutritionData: FoodData?
     
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack{
+            Text(nutritionData?.timestamp ?? "no value found")
+            Text(nutritionData?.name?[1] ?? "no value found")
+        }
+        
     }
 }
 
