@@ -35,7 +35,7 @@ struct PersistenceController {
             foodItem.sodium_mg = randomIntArr
             foodItem.sugar_g = randomDoubleArr
             
-            foodItem.name = ["random placeholder", "random placeholder", "random placeholder"]
+            foodItem.name = ["random placeholder1", "random placeholder2", "random placeholder3"]
             foodItem.timestamp = "placeholder timestamp"
         }
         do {

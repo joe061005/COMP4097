@@ -24,10 +24,12 @@ struct HistoryView: View {
     var body: some View {
         NavigationView{
             List(results) { resultItem in
-                HStack{
-                    Spacer()
-                    Text("\(resultItem.name?[0] ?? "No value provided")")
-                    Spacer()
+                NavigationLink(destination: NavigatedNutritionView(nutritionData: resultItem)){
+                    HStack{
+                        Spacer()
+                        Text("\(resultItem.name?[0] ?? "No value provided")")
+                        Spacer()
+                    }
                 }
             }
             .navigationBarTitle("History", displayMode: .inline).navigationViewStyle(StackNavigationViewStyle())
