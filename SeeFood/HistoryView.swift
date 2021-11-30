@@ -6,10 +6,32 @@
 //
 
 import SwiftUI
+import CoreData
 
 struct HistoryView: View {
+    @FetchRequest var results: FetchedResults<FoodData>
+    
+    //used to create core data objects
+    @Environment(\.managedObjectContext) var managedObjectContext
+    
+    init() {
+        self._results = FetchRequest(
+            entity: FoodData.entity(),
+            sortDescriptors: [NSSortDescriptor(keyPath: \FoodData.timestamp, ascending: true)]
+        )
+    }
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationView{
+            List(results) { resultItem in
+                HStack{
+                    Spacer()
+                    Text("\(resultItem.name?[0] ?? "No value provided")")
+                    Spacer()
+                }
+            }
+            .navigationBarTitle("History", displayMode: .inline).navigationViewStyle(StackNavigationViewStyle())
+        }
     }
 }
 
