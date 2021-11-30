@@ -42,6 +42,7 @@ struct PersistenceController {
             
             foodItem.name = ["random placeholder1", "random placeholder2", "random placeholder3"]
             foodItem.timestamp = stringDate
+            foodItem.saved = false
         }
         do {
             try viewContext.save()

@@ -205,6 +205,8 @@ extension HomeView{
         }
         foodObj.timestamp = getDate()
         foodObj.img_data = data
+        foodObj.saved = true
+
         
         do {
             try managedObjectContext.save()
