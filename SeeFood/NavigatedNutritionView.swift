@@ -12,6 +12,7 @@ struct NavigatedNutritionView: View {
     
     var body: some View {
         VStack{
+            //convert image binary data to UIImage and do formatting
             Text(nutritionData?.timestamp ?? "no value found")
             ForEach(0 ..< (nutritionData?.name?.count)!) { value in
                 Group{
