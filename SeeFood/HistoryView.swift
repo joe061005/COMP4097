@@ -26,6 +26,7 @@ struct HistoryView: View {
             List(results) { resultItem in
                 NavigationLink(destination: NavigatedNutritionView(nutritionData: resultItem)){
                     HStack{
+                        //instead of only text, we can also show a small pic of image as well
                         Spacer()
                         Text("\(resultItem.name?[0] ?? "No value provided")")
                         Spacer()
