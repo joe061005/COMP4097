@@ -47,6 +47,13 @@ struct HomeView: View {
                                 Image(uiImage: uiImage!)
                                     .resizable()
                                     .scaledToFit()
+                            }else{
+                                Image(systemName: "square.and.arrow.up")
+                                    .data(url: URL(string: "https://www.lifewire.com/thmb/P856-0hi4lmA2xinYWyaEpRIckw=/1920x1326/filters:no_upscale():max_bytes(150000):strip_icc()/cloud-upload-a30f385a928e44e199a62210d578375a.jpg")!)
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width: 300, alignment: .center)
+                                Text("please upload an image first")
                             }
                         }
                     }
@@ -140,6 +147,15 @@ struct HomeView: View {
                 }
             
         }.padding()
+    }
+}
+
+extension Image{
+    func data(url: URL) -> Self{
+        if let data = try? Data(contentsOf: url){
+            return Image(uiImage: UIImage(data: data)!).resizable()
+        }
+        return self.resizable()
     }
 }
 
