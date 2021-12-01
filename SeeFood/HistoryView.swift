@@ -51,8 +51,8 @@ struct HistoryView: View {
                             resultItem.saved = false
                             try? managedObjectContext.save()
                         }
-                    }
-                    //.buttonStyle(.borderless).foregroundColor(.red)
+                    }.foregroundColor(.red)
+                    //.buttonStyle(.borderless)
 
                 }
             }
