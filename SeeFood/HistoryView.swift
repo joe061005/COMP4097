@@ -26,24 +26,42 @@ struct HistoryView: View {
     var body: some View {
         NavigationView{
             List(results.filter { $0.saved == true }) { resultItem in
-                NavigationLink(destination: NavigatedNutritionView(nutritionData: resultItem)){
-                    HStack{
-                        //instead of only text, we can also show a small pic of image as well
-                        Spacer()
+                let coredataLoadedimage = UIImage(data: (resultItem.img_data)!)
+                let date = String(resultItem.timestamp ?? "")
+                HStack{
+                    NavigationLink(destination: NavigatedNutritionView(nutritionData: resultItem)){
+                        Image(uiImage: coredataLoadedimage!)
+                            .resizable()
+                            .scaledToFit()
+                            .frame(height:80)
+                        Text(getDate(time: date ))
                         Text("\(resultItem.name?[0] ?? "No value provided")")
-                        Spacer()
+                        if ((resultItem.name!.count) > 1) {
+                            Text("\(resultItem.name?[1] ?? "")")
+                        }
                     }
-                }
-                Button("Delete") {
-                    managedObjectContext.performAndWait {
-                        resultItem.saved = false
-                        try? managedObjectContext.save()
-                    }
+                    Button("X") {
+                        managedObjectContext.performAndWait {
+                            resultItem.saved = false
+                            try? managedObjectContext.save()
+                        }
+                    }.buttonStyle(.borderless).foregroundColor(.red)
+
                 }
             }
             .navigationBarTitle("History", displayMode: .inline).navigationViewStyle(StackNavigationViewStyle())
         }
     }
+}
+
+func getDate(time:String)->String{
+    let timeFormatter = DateFormatter()
+    let dateFormatterPrint = DateFormatter()
+    dateFormatterPrint.dateFormat = "HH:mm E, d MMM y"
+    timeFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+    let newDate = timeFormatter.date(from: time)!
+    let dates = dateFormatterPrint.string(from: newDate)
+    return dates
 }
 
 struct HistoryView_Previews: PreviewProvider {

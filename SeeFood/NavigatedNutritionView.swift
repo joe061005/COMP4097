@@ -13,7 +13,16 @@ struct NavigatedNutritionView: View {
     var body: some View {
         VStack{
             //convert image binary data to UIImage and do formatting
-            Text(nutritionData?.timestamp ?? "no value found")
+            let date = String(nutritionData?.timestamp ?? "no value found")
+            let coredataLoadedimage = UIImage(data: (nutritionData?.img_data)!)
+            Text(getDate(time: date ))
+            VStack{
+                if coredataLoadedimage != nil {
+                    Image(uiImage: coredataLoadedimage!)
+                        .resizable()
+                        .scaledToFit()
+                }
+            }
             ForEach(0 ..< (nutritionData?.name?.count)!) { value in
                 Group{
                     Text("Detected: \(nutritionData?.name?[value] ?? "no value found")")
@@ -23,7 +32,6 @@ struct NavigatedNutritionView: View {
                     Text("Serving size: \(nutritionData?.serving_size_g?[value] ?? -1, specifier: "%.1f") g")
                     Text("Sodium: \(nutritionData?.sodium_mg?[value] ?? -1, specifier: "%.1f") mg")
                 }
-                
                 Group{
                     Text("Potassium: \(nutritionData?.potassium_mg?[value] ?? -1, specifier: "%.1f") mg")
                     Text("Saturated Fat: \(nutritionData?.fat_saturated_g?[value] ?? -1, specifier: "%.1f") g")
@@ -32,6 +40,7 @@ struct NavigatedNutritionView: View {
                     Text("Cholesterol: \(nutritionData?.cholestrol_mg?[value] ?? -1, specifier: "%.1f") mg")
                     Text("Protein: \(nutritionData?.protein_g?[value] ?? -1, specifier: "%.1f") g")
                 }
+                Spacer()
             }
             
         }
