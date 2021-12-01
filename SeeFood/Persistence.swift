@@ -40,6 +40,7 @@ struct PersistenceController {
             foodItem.sodium_mg = randomIntArr
             foodItem.sugar_g = randomDoubleArr
             
+            foodItem.imgClass = "placeholder imgClass"
             foodItem.name = ["random placeholder1", "random placeholder2", "random placeholder3"]
             foodItem.timestamp = stringDate
             foodItem.saved = false
