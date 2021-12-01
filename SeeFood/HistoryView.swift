@@ -35,17 +35,20 @@ struct HistoryView: View {
                             .scaledToFit()
                             .frame(height:80)
                         Text(getDate(time: date ))
-                        Text("\(resultItem.name?[0] ?? "No value provided")")
-                        if ((resultItem.name!.count) > 1) {
-                            Text("\(resultItem.name?[1] ?? "")")
-                        }
+                        Text(resultItem.imgClass)
+                        //anthony's code for each calorie ninja item
+//                        Text("\(resultItem.name?[0] ?? "No value provided")")
+//                        if ((resultItem.name!.count) > 1) {
+//                            Text("\(resultItem.name?[1] ?? "")")
+//                        }
                     }
                     Button("X") {
                         managedObjectContext.performAndWait {
                             resultItem.saved = false
                             try? managedObjectContext.save()
                         }
-                    }.buttonStyle(.borderless).foregroundColor(.red)
+                    }
+                    //.buttonStyle(.borderless).foregroundColor(.red)
 
                 }
             }

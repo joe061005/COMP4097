@@ -204,6 +204,7 @@ extension HomeView{
             foodObj.sugar_g?.append(nutrition.sugar_g)
         }
         foodObj.timestamp = getDate()
+        foodObj.imgClass = classifier.imageClass
         foodObj.img_data = data
         foodObj.saved = true
 
