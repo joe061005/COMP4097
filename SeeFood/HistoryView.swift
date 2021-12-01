@@ -30,18 +30,22 @@ struct HistoryView: View {
                 let date = String(resultItem.timestamp ?? "")
                 HStack{
                     NavigationLink(destination: NavigatedNutritionView(nutritionData: resultItem)){
-                        Image(uiImage: coredataLoadedimage!)
-                            .resizable()
-                            .scaledToFit()
-                            .frame(height:80)
-                        Text(getDate(time: date ))
-                        Text(resultItem.imgClass)
-                        //anthony code for calorie ninja names
-//                        Text("\(resultItem.name?[0] ?? "No value provided")")
-//                        if ((resultItem.name!.count) > 1) {
-//                            Text("\(resultItem.name?[1] ?? "")")
-//                        }
+                        HStack{
+                            Image(uiImage: coredataLoadedimage!)
+                                .resizable()
+                                .scaledToFit()
+                                .frame(height:80)
+                            Text(getDate(time: date ))
+                            Text(resultItem.imgClass!)
+                            //anthony code for calorie ninja names
+    //                        Text("\(resultItem.name?[0] ?? "No value provided")")
+    //                        if ((resultItem.name!.count) > 1) {
+    //                            Text("\(resultItem.name?[1] ?? "")")
+    //                        }
+                        }
+                        
                     }
+                    
                     Button("X") {
                         managedObjectContext.performAndWait {
                             resultItem.saved = false
