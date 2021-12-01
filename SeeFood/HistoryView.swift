@@ -36,7 +36,7 @@ struct HistoryView: View {
                             .frame(height:80)
                         Text(getDate(time: date ))
                         Text(resultItem.imgClass)
-                        //anthony's code for each calorie ninja item
+                        //anthony code for calorie ninja names
 //                        Text("\(resultItem.name?[0] ?? "No value provided")")
 //                        if ((resultItem.name!.count) > 1) {
 //                            Text("\(resultItem.name?[1] ?? "")")
