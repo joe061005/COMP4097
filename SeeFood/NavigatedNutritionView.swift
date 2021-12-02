@@ -41,6 +41,7 @@ struct NavigatedNutritionView: View {
                     Text("Protein: \(nutritionData?.protein_g?[value] ?? -1, specifier: "%.1f") g")
                 }
                 Spacer()
+                
             }
             
         }

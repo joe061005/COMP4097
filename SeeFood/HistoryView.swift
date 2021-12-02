@@ -52,7 +52,7 @@ struct HistoryView: View {
                             try? managedObjectContext.save()
                         }
                     }.foregroundColor(.red)
-                    //.buttonStyle(.borderless)
+                    .buttonStyle(.borderless)
 
                 }
             }
