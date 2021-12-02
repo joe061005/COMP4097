@@ -1,22 +1,6 @@
-[GET HELP WITH YOUR iOS MACHINE LEARNING PROJECT](https://instamentor.com/mentors/leon)
-
-# seefood
-SeeFood on steroid, an object recognition iOS app based on SwiftUI, CoreML and Vision
-
-Original idea came from Jing Yang's app in HBO show Silicon Valley, Shazam for food. 
-
-Watch the following episode for the context: 
-
-## [SeeFood YouTube](https://www.youtube.com/watch?v=vIci3C4JkL0&ab_channel=RaptorX88RaptorX88)
-
-## Original article about this app:
-https://instamentor.com/articles/object-recognition-with-coreml-vision-and-swiftui-on-ios
-
-![](/hotdog.jpeg)
-
 ## To build the app on your iOS devices
 * Download this repository
-* Open SeeFood.xcodeproj with Xcode by double clicking on it
+* Download this core ml model and put it into the project before running: https://d3rwn5lppri82t.cloudfront.net/coreml/food.mlmodel
 * Connect your iPhone or iPad
 * Click the Build ▶️ or press Command R
 * Allow camera or photo album access if it's the first time you tap the 📸 button on the top
